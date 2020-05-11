@@ -1,0 +1,8 @@
+// BG #FFFFE0 (light yellow)
+Or(
+    {Animal Hold.Hold Reason} = 'URI/KC Tx',
+    {Animal Hold.Hold Reason} = 'Dental Pending',
+    {Animal Hold.Hold Reason} = 'Pending DVM Check',
+    {Animal Hold.Hold Reason} = 'Pending Labwork',
+    {Animal Hold.Hold Reason} = 'Needs Grooming',
+    {Animal Hold.Hold Reason} = 'In B-Mod')

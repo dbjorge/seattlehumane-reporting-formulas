@@ -1,0 +1,7 @@
+=OR(
+    AND(CheckContains(@reportName@, 'RDR List'), NOT([E69])),
+    AND(CheckContains(@reportName@, '(Adoptions)'), NOT([E70])),
+    AND(CheckContains(@reportName@, '(Holding)'), [E70]),
+    AND(CheckContains(@reportName@, 'DBS List'), [E66]),
+    AND([E10]!='All', [E10]!={Animal.Species}),
+    AND([E11]!='rounds', NOT([E74])))

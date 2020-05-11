@@ -1,0 +1,20 @@
+=If(
+    {Care Activity.RecordID}='',
+    'never',
+    If(
+        // Is today
+        (Today()<DateAdd('h',-3,{Care Activity.Activity Date})),
+        // Show time only
+        // How do you not have a date format function
+        (If(
+            Hour(DateAdd('h',-3,{Care Activity.Activity Date}))=0,
+            '12',
+            (Hour(DateAdd('h',-3,{Care Activity.Activity Date})) - If(Hour(DateAdd('h',-3,{Care Activity.Activity Date}))>12,12,0))
+           )
+          & ':'
+          & Minute(DateAdd('h',-3,{Care Activity.Activity Date}))
+          & If(Hour(DateAdd('h',-3,{Care Activity.Activity Date}))<12,'am','pm')),
+        // Show date only
+        (Month(DateAdd('h',-3,{Care Activity.Activity Date}))
+          & '/'
+          & Day(DateAdd('h',-3,{Care Activity.Activity Date})))))

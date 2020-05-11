@@ -1,0 +1,22 @@
+// Later, ideally:
+// =RegexReplace({Animal.Name}, '[ -]*(Adoption\s+Pending|Pending\s+Adoption)[!]?', '')
+//
+// Today:
+=If(
+    OR(
+        Upper(Right({Animal.Name}, 19))='- ADOPTION PENDING!',
+        Upper(Right({Animal.Name}, 19))='- PENDING ADOPTION!',
+        Upper(Right({Animal.Name}, 19))='- ADOPTION  PENDING',
+        Upper(Right({Animal.Name}, 19))='- PENDING  ADOPTION'),
+    Trim(Left({Animal.Name},Len({Animal.Name})-19)),
+    If(
+        OR(
+            Upper(Right({Animal.Name}, 18))='- ADOPTION PENDING',
+            Upper(Right({Animal.Name}, 18))='- PENDING ADOPTION'),
+        Trim(Left({Animal.Name},Len({Animal.Name})-18)),
+        If(
+            OR(
+                Upper(Right({Animal.Name}, 17))='-ADOPTION PENDING',
+                Upper(Right({Animal.Name}, 17))='-PENDING ADOPTION'),
+            Trim(Left({Animal.Name},Len({Animal.Name})-17)),
+            Trim({Animal.Name}))))

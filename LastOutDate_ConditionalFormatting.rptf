@@ -1,0 +1,4 @@
+=If( // Must use if instead of or to short circuit
+    {Care Activity.RecordID}='',
+    True(),
+    DateDiff('h', {Care Activity.Activity Date}, Now())>(8-3))

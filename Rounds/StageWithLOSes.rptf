@@ -1,0 +1,14 @@
+={Animal Current.Stage}
+    & ' ('
+    & DateDiff(
+        'd',
+        {Animal Current.Stage Start Date},
+        Today())
+    & 'd/'
+    & If({Intake.Created Date/Time}!='',
+        DateDiff(
+            'd',
+            {Intake.Created Date/Time},
+            Today()),
+        '?')
+    & 'd)'

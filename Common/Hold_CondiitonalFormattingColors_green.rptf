@@ -1,0 +1,15 @@
+// BG #E0FFE0 (light green)
+Or(
+    {Animal Hold.Hold Reason} = 'Needs Photo/Desc',
+    {Animal Hold.Hold Reason} = '2nd Advising Required',
+    {Animal Hold.Hold Reason} = '2nd Advising Req',
+    {Animal Hold.Hold Reason} = 'Adoption Hold 1',
+    {Animal Hold.Hold Reason} = 'Adoption Hold 2',
+    {Animal Hold.Hold Reason} = 'Adoption Pending',
+    {Animal Hold.Hold Reason} = 'Bonded Pair',
+    {Animal Hold.Hold Reason} = 'Photo at Adoption',
+    {Animal Hold.Hold Reason} = 'Waiver: Print and Sign',
+    {Animal Hold.Hold Reason} = 'Waiver: Print&Sign',
+    {Animal Hold.Hold Reason} = 'Callback Request',
+    {Animal Hold.Hold Reason} = 'Callback Requested',
+    CheckContains({Animal Hold.Hold Reason}, 'm Sponsored!'))
